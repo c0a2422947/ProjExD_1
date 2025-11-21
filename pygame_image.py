@@ -11,6 +11,7 @@ def main():
     clock  = pg.time.Clock()
     bg_img = pg.image.load("fig/pg_bg.jpg")
     other_bg_img = pg.image.load("fig/pg_bg.jpg")
+    other_bg_img = pg.transform.flip(other_bg_img, True, False)
     kt_img = pg.image.load("fig/3.png")
     kt_img = pg.transform.flip(kt_img, True, False)
     tmr = 0
@@ -24,8 +25,8 @@ def main():
         tmr += 1        
         clock.tick(200)
         if tmr >= 800:
-            screen.blit(other_bg_img, [800-tmr, 0])
-            
+            screen.blit(other_bg_img, [1600-tmr, 0])
+
 if __name__ == "__main__":
     pg.init()
     main()
